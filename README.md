@@ -156,18 +156,18 @@ object in order to keep it accurate. It's much better if we can store it once in
 That way, each dog object can access it but we only need to store it and set it in one place.
 
 Let's add some code to our class. To create a class variable, we simply add a variable outside
-of any existing functions. Let's add a `totalDogs` variable to the class. Let's also add a
+of any existing functions. Let's add a `total_dogs` variable to the class. Let's also add a
 line that increments this value inside our `__init__` method. And just for fun, let's add
 another line to our `bark_hello` method that references this total:
 
 ```python
 class Dog():
-  totalDogs = 0
+  total_dogs = 0
   def __init__(self, name="", age=0 color=""):
     self.name = name
     self.age = age
     self.color = color
-    Dog.totalDogs += 1
+    Dog.total_dogs += 1
     print(name, "created:", self)
 
   def bark_hello(self):
@@ -175,8 +175,8 @@ class Dog():
     print("There are", Dog.totalDogs, "dogs in this room!")
 ```
 
-Now when we create a new dog, the `__init__` method increments the `totalDogs` counter which
-is stored in the Dog class itself. We can access the value stored in `Dog.totalDogs` inside our script
+Now when we create a new dog, the `__init__` method increments the `total_dogs` counter which
+is stored in the Dog class itself. We can access the value stored in `Dog.total_dogs` inside our script
 and each dog object can access it from their own functions.
 
 ## Subclasses and Inheritance
